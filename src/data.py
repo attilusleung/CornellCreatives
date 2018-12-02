@@ -124,7 +124,7 @@ class User(db.Model):
 class Service(db.Model):
     #TODO: Foreign Key Error Handling? Do we need this? All services are initialized in user init block anyways
     #TODO: UPDATe SERVICES
-    SERVICES = ['tutor', 'photographer', 'programmer'] #Put all services here
+    SERVICES = ['tutor', 'photographer', 'chef', 'videographer', 'artist'] #Put all services here
     id = db.Column(db.Integer, primary_key = True)
     user = db.Column(db.String(7), db.ForeignKey('user.netid'), nullable = False)
     service = db.Column(db.String(80), nullable = False)

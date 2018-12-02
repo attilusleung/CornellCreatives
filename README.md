@@ -188,4 +188,6 @@ Response:
   }
 Notes:
   - The request will never throw an error, but the list of users may be empty
+  - Currently, the default services provided by the app are :
+    ['tutor', 'photographer', 'chef', 'videographer', 'artist']
   - This route is provided for the "others" screen of the app
