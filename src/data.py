@@ -132,8 +132,8 @@ class Service(db.Model):
 
     def __init__(self, **kwargs):
         #Call this in a try except block
-        if kwargs.get('service') not in Service.SERVICES:
-            raise InvalidServiceError()
+        #if kwargs.get('service') not in Service.SERVICES:
+        #    raise InvalidServiceError()
 
         self.user = kwargs.get('user')
         self.service = kwargs.get('service')
@@ -148,6 +148,7 @@ class Service(db.Model):
 
     def __str__(self):
         return self.service
+
 
 #TODO: TRACKING
 """

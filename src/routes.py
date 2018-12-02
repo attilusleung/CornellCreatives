@@ -187,6 +187,21 @@ def user_services_del(user, data):
     db.session.commit()
     return json.dumps({'success': True, **user.serialize_data()})
 
+@app.route('/service/other/', methods = ['GET'])
+def get_other_service():
+    l = Service.query
+    for s in Service.SERVICES:
+        l = l.filter(Service.service != s)
+    users = []
+    for o in l.all():
+        users.append(User.query.filter_by(netid = o.user).first().serialize_data())
+    return json.dumps({
+        'success': True,
+        'users': users
+    })
+
+
+
 @app.route('/service/<service>/', methods = ['GET'])
 def get_service(service):
     if service not in Service.SERVICES:
@@ -199,6 +214,7 @@ def get_service(service):
         'success': True,
         'users': users
     })
+
 
 """
 @app.route("/reset/", methods = ['POST'])
