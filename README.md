@@ -25,7 +25,7 @@ services are photographer, programmer, and tutor, although this is subject to ch
 They also have authentication data including their password, session token,
 expiration time for their session token, and a renew token.
 
-###Registering a User:
+### Registering a User:
 Request: POST /register/
 Body:
   {
@@ -76,7 +76,7 @@ Notes:
     - When the credentials are incorrect
   - This request should be used when the session/renew token is lost
 
-###Renew Session:
+### Renew Session:
 Request: Post /renew/
 Body:{"renew": <renew token>}
 Response:
@@ -91,7 +91,7 @@ Notes:
     - Renew token not provided
     - Renew token is invalid
 
-###Get specific User:
+### Get specific User:
 Request: GET /user/<netid>/
 Response:
   {
@@ -105,7 +105,7 @@ Notes:
   - The request will thorw an error in the following cases:
     - User with the netid is not found
 
-###Edit services of a specific user:
+### Edit services of a specific user:
 Request: POST /user/<netid>/services/
 Header:
   Authentication: Bearer <session token>
@@ -126,7 +126,7 @@ Notes:
     - No service field provided
     - Service not provided by the app
 
-###Delete services of a specific user:
+### Delete services of a specific user:
 Request: DELETE /user/<netid>/services/
 Header:
   Authentication: Bearer <session token>
@@ -147,7 +147,7 @@ Notes:
     - No service field provided
     - Service not provided by the user and thus cannot be deleted
 
-###Get all users that provide a specific service:
+### Get all users that provide a specific service:
 Request: GET /service/<service>/
 Response:
   {
@@ -168,7 +168,7 @@ Response:
 Notes:
   - The request will never throw an error, but the list of users may be empty
 
-###Get all the users that provide services outside the default services supported by the app
+### Get all the users that provide services outside the default services supported by the app
 Request: GET /service/other/
 Response:
   {
