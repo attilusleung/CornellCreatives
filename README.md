@@ -57,7 +57,7 @@ Notes:
     - one or more of the services in the list of services is not supported by
       the site
 
-###User Login:
+### User Login:
 Request: POST /login/
 Body:
   {
