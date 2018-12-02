@@ -9,9 +9,6 @@ Name is a string representing the name of the user
 avatar is an integer representing the type of avatar for the user
 Services is a list of strings that represent the services that each user provides.
 
-The services of a user must be supported by our application (currently, the supported
-services are photographer, programmer, and tutor, although this is subject to change)
-
 They also have authiencation data including their password, session token,
 expiration time for their session token, and a renew token.
 
@@ -46,9 +43,6 @@ Response:
     - no netid/password/name key provided
     - one or more of the services in the list of services is not supported by
       the site
-#I'm actually thinking if it's possible to make it check whether the netid is
-valid by making a user verify their account through email. Actually no cuz I probably
-dont have time for it
 
 User Login:
 Request: POST /login/
@@ -139,3 +133,47 @@ Response:
     - Authentication token expired
     - No service field provided
     - Service not provided by the user and thus cannot be deleted
+
+Get all users that provide a specific service:
+Request: GET /service/<service>/
+Response:
+  {
+    "success": true,
+    [
+      {
+      "netid": <netid1>,
+      "name": <name1>,
+      "avatar": <avatar1>
+      "services": [<service1>, <service2>]
+      },
+      "netid": <netid2>,
+      "name": <name2>,
+      "avatar": <avatar2>
+      "services": [<service1>, <service2>]
+    ]
+  }
+*Notes:
+  - The request will never throw an error, but the list of users may be empty
+
+Get all the users that provide services outside the default services supported
+by the app
+Request: GET /service/other/
+Response:
+  {
+    "success": true,
+    [
+      {
+      "netid": <netid1>,
+      "name": <name1>,
+      "avatar": <avatar1>
+      "services": [<service1>, <service2>]
+      },
+      "netid": <netid2>,
+      "name": <name2>,
+      "avatar": <avatar2>
+      "services": [<service1>, <service2>]
+    ]
+  }
+*Notes:
+  - The request will never throw an error, but the list of users may be empty
+  - This route is provided for the "others" screen of the app

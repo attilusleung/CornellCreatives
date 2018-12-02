@@ -204,8 +204,8 @@ def get_other_service():
 
 @app.route('/service/<service>/', methods = ['GET'])
 def get_service(service):
-    if service not in Service.SERVICES:
-        return json.dumps({'success': False, 'error': 'Service not provided by site'})
+    #if service not in Service.SERVICES:
+    #    return json.dumps({'success': False, 'error': 'Service not provided by site'})
     servs = Service.query.filter_by(service = service).all()
     users = []
     for s in servs:
