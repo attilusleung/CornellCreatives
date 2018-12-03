@@ -30,6 +30,7 @@ expiration time for their session token, and a renew token.
 
 ### Registering a User:
 Request: `POST /register/`
+
 Body:
 ```
   {
@@ -66,6 +67,7 @@ Notes:
 
 ### User Login:
 Request: `POST /login/`
+
 Body:
 ```
   {
@@ -89,7 +91,9 @@ Notes:
 
 ### Renew Session:
 Request: `POST /renew/`
+
 Body:```{"renew": <renew token>}```
+
 Response:
 ```
   {
@@ -106,6 +110,7 @@ Notes:
 
 ### Get specific User:
 Request: `GET /user/<netid>/`
+
 Response:
 ```
   {
@@ -122,9 +127,12 @@ Notes:
 
 ### Edit services of a specific user:
 Request: `POST /user/<netid>/services/`
+
 Header:
   Authentication: `Bearer <session token>`
+  
 Body:`{"services": [<services1>, <service2>]}`
+
 Response:
 ```
   {
@@ -145,9 +153,12 @@ Notes:
 
 ### Delete services of a specific user:
 Request: `DELETE /user/<netid>/services/`
+
 Header:
   Authentication: `Bearer <session token>`
+  
 Body:`{"services": [<services1>]}`
+
 Response:
 ```
   {
@@ -168,6 +179,7 @@ Notes:
 
 ### Get all users that provide a specific service:
 Request: `GET /service/<service>/`
+
 Response:
 ```
   {
@@ -191,6 +203,7 @@ Notes:
 
 ### Get all the users that provide services outside the default services supported by the app
 Request: `GET /service/other/`
+
 Response:
 ```
   {
