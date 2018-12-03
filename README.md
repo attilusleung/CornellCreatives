@@ -65,6 +65,7 @@ Notes:
     - one or more of the services in the list of services is not supported by
       the site
 
+
 ### User Login:
 Request: `POST /login/`
 
@@ -88,6 +89,7 @@ Notes:
     - No netid/password provided
     - When the credentials are incorrect
   - This request should be used when the session/renew token is lost
+
 
 ### Renew Session:
 Request: `POST /renew/`
@@ -125,6 +127,7 @@ Notes:
   - The request will thorw an error in the following cases:
     - User with the netid is not found
 
+
 ### Edit services of a specific user:
 Request: `POST /user/<netid>/services/`
 
@@ -150,6 +153,7 @@ Notes:
     - Authentication token expired
     - No service field provided
     - Service not provided by the app
+
 
 ### Delete services of a specific user:
 Request: `DELETE /user/<netid>/services/`
@@ -177,6 +181,7 @@ Notes:
     - No service field provided
     - Service not provided by the user and thus cannot be deleted
 
+
 ### Get all users that provide a specific service:
 Request: `GET /service/<service>/`
 
@@ -200,6 +205,7 @@ Response:
 ```
 Notes:
   - The request will never throw an error, but the list of users may be empty
+
 
 ### Get all the users that provide services outside the default services supported by the app
 Request: `GET /service/other/`
