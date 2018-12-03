@@ -10,6 +10,9 @@ allows the app to search and filter these users to show them in the app. It also
 provides authentication processes for service providers to remove or edit
 the services they provide.
 
+IOS Repo:
+https://github.com/cjw322/CornellCreatives.git
+
 ## API Specifications
 
 Each user has a netid, name, avatar, a list of services (may be empty or more than one).
